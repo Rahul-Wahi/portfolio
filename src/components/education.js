@@ -10,7 +10,7 @@ class Education extends Component {
                     <p style={{marginTop:'0px'}}>{education.specialization}, {education.universityName}</p>
                 </Cell>
                 <Cell col={4}>
-                    <p>{education.startMonth} {education.startYear} - {education.endMonth} {education.endYear}</p>
+                    <p className="duration" >{education.startMonth} {education.startYear} - {education.endMonth} {education.endYear}</p>
                 </Cell>
 
             </Grid>
