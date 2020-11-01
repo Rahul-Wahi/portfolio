@@ -8,7 +8,9 @@ import Resume from "./resume";
 
 const Main = ({resumeData}) => (
     <Switch>
-        <Route exact path="/" component={LandingPage}/>
+        <Route exact path="/" render={(props) => (
+            <LandingPage resumeData={resumeData}/>
+        )}/>
         <Route exact path="/aboutme" component={About}/>
 
         <Route exact path="/projects" render={(props) => (
@@ -17,7 +19,11 @@ const Main = ({resumeData}) => (
         <Route exact path="/resume" render={(props) => (
             <Resume resumeData={resumeData}/>
         )}/>
-        <Route exact path="/contact" component={Contact}/>
+
+            <Route exact path="/contact" render={(props) => (
+                <Contact resumeData={resumeData}/>
+            )}/>
+
     </Switch>
 )
 
