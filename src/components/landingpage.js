@@ -3,26 +3,28 @@ import {Cell, Grid} from "react-mdl";
 
 class LandingPage extends Component {
     render() {
+        const socialLinkComp = this.props.resumeData.socialLinks.map(socialLink =>
+        <a href={socialLink.url} target="_blank">
+            <i className={socialLink.className} aria-hidden="true" />
+        </a>
+        );
+        const skills = this.props.resumeData.skillsHomePage.join(" | ");
+
         return (
             <div style={{width: '100%', margin: 'auto'}}>
                 <Grid className="landing-grid">
                     <Cell col={12}>
                         <img
-                            src={process.env.PUBLIC_URL + '/rahul.png'}
+                            src={this.props.resumeData.profileImage}
                             className='avatar-img'
                             alt="avatar"
                         />
                         <div className="banner-text">
                             <h1>Software Developer</h1>
                             <hr />
-                            <p>HTML/CSS | React | Angular | Java | Oracle</p>
+                            <p>{skills}</p>
                             <div className="social-links">
-                                <a href="https://github.com/rahul-wahi" target="_blank">
-                                    <i className="fa fa-linkedin-square" aria-hidden="true"/>
-                                </a>
-                                <a href="https://github.com/rahul-wahi" target="_blank">
-                                    <i className="fa fa-github-square" aria-hidden="true"/>
-                                </a>
+                                {socialLinkComp}
                             </div>
                         </div>
 
