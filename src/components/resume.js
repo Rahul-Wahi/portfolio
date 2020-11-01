@@ -3,6 +3,7 @@ import {Cell, Grid} from "react-mdl";
 import Education from "./education";
 import Experience from "./experience";
 import Skills from "./skills";
+import Achievement from "./achievement";
 
 class Resume extends Component {
     render() {
@@ -12,14 +13,16 @@ class Resume extends Component {
         const expericeComp = this.props.resumeData.work.map(workInfo =>
             <Experience experience={workInfo} />
         );
-        console.log("rahul")
+
+        const achievementComp = <Achievement achievements= {this.props.resumeData.achievements} />;
+
 
         return (
             <div>
                 <Grid>
                     <Cell col={4}>
                         <div style={{textAlign: 'center'}}>
-                            <img src={process.env.PUBLIC_URL + '/rahul.png'}
+                            <img src={this.props.resumeData.profileImage}
                                  alt="avatar"
                                  style={{height: '200px'}}/>
                         </div>
@@ -28,14 +31,14 @@ class Resume extends Component {
                         <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
                         <p>{this.props.resumeData.aboutme}</p>
                         <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-                        <h5>Address</h5>
-                        <p>{this.props.resumeData.address}</p>
                         <h5>Phone</h5>
                         <p>{this.props.resumeData.phone}</p>
                         <h5>Email</h5>
                         <p>{this.props.resumeData.mail}</p>
-                        <h5>Web</h5>
-                        <p>{this.props.resumeData.website}</p>
+                        <h5>Github</h5>
+                        <a href={this.props.resumeData.github} target="_blank">{this.props.resumeData.github}</a>
+                        <h5>Linkedin</h5>
+                        <a href={this.props.resumeData.github} target="_blank">{this.props.resumeData.github}</a>
                         <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
                     </Cell>
                     <Cell className="resume-right-col" col={8}>
@@ -44,7 +47,7 @@ class Resume extends Component {
                         <hr style={{borderTop: '3px solid $e22947'}}/>
                         <h3>Experience</h3>
                         {expericeComp}
-                        <hr style={{borderTop: '3px solid #e22947'}}/>
+                        <hr style={{borderTop: '3px solid $e22947'}}/>
                         <h2>Skills</h2>
                         <Skills
                             skill="javascript"
@@ -62,6 +65,9 @@ class Resume extends Component {
                             skill="React"
                             progress={25}
                         />
+                        <hr style={{borderTop: '3px solid $e22947'}}/>
+                        <h2>Achievements</h2>
+                        {achievementComp}
                     </Cell>
                 </Grid>
             </div>
