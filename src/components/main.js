@@ -8,19 +8,19 @@ import Resume from "./resume";
 
 const Main = ({resumeData}) => (
     <Switch>
-        <Route exact path="/" render={(props) => (
+        <Route exact path="/portfolio" render={(props) => (
             <LandingPage resumeData={resumeData}/>
         )}/>
-        <Route exact path="/aboutme" component={About}/>
+        <Route exact path="/portfolio/aboutme" component={About}/>
 
-        <Route exact path="/projects" render={(props) => (
+        <Route exact path="/portfolio/projects" render={(props) => (
             <Project resumeData={resumeData}/>
         )}/>
-        <Route exact path="/resume" render={(props) => (
+        <Route exact path="/portfolio/resume" render={(props) => (
             <Resume resumeData={resumeData}/>
         )}/>
 
-            <Route exact path="/contact" render={(props) => (
+            <Route exact path="/portfolio/contact" render={(props) => (
                 <Contact resumeData={resumeData}/>
             )}/>
 
