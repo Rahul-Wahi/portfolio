@@ -124,7 +124,7 @@ let resumeData = {
             "technologies": "Elixir, Git, Distributed Hash Table",
             "description": ["Implemented a paper on ‘Resilient Tapestry Overlay Network’ using DHTs and back pointers.",
                 "Evaluated the robustness of this P2P overlay network with 1000 nodes and 100 requests per node."],
-            "img": process.env.PUBLIC_URL + '/Chord_network.png',
+            "img": process.env.PUBLIC_URL + '/tapestry_network.png',
             "github": ["https://github.com/Rahul-Wahi/Tapestry-Peer-to-Peer-Overlay-Network"]
         },
         {
@@ -132,7 +132,7 @@ let resumeData = {
             "tags": ["Advance Data Structures"],
             "technologies": "Java, Git",
             "description": ["Implemented min heap and red-black tree for creating the task scheduler application"],
-            "img": process.env.PUBLIC_URL + '/icon_scheduler.svg',
+            "img": process.env.PUBLIC_URL + '/scheduler.svg',
             "github": ["https://github.com/Rahul-Wahi/MinHeap-and-RedBlack-Tree-"]
         },
         {
